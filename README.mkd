@@ -1,0 +1,29 @@
+Website Showroom
+================
+
+Python/Django project to easily create showroom websites presenting different websites around a certain topic, originally used for http://opendata-tools.org (engl.) and http://opendata-showroom.org (german).
+
+Features
+--------
+- Administrable via Django admin (Categories, Websites)
+- Automatic screenshot resize
+- Customizable category colors
+- Things like title, subtitle, footer configurable via settings.py
+- No language dependent static code
+
+Requirements
+------------
+- Python v.2.x (Tested on 2.7, 2.6 should work)
+- Django v.1.4
+- django-haystack v.2.0 (Search module for Django)
+- PIL
+- Whoosh v.2.3 (Full-text search enginge used for django-haystack)
+- django-debug-toolbar (optional, if you don't have it installed, comment out "debug_toolbar" in INSTALLED_APPS in settings.py)
+
+Installation/Setup
+------------------
+- Follow your preferred Django installation path (https://docs.djangoproject.com/en/1.3/howto/deployment/) and make sure that website_showroom folder is installed as a django project and that the files in static can be accessed via path /static/ in your urls
+- If your admin under http://yourdomain/admin/ is displayed css-less, make sure, that the static files of the django admin (e.g. css files) can be accessed via your webserver (e.g. through symlinking, something like "ln -s /usr/local/lib/python2.7/dist-packages/django/contrib/admin/media/ admin" in your static directory)
+- Change your admin password from "admin" to whatever you like via the admin interface
+- Customize your site's title, subtitle,... via settings.py
+- Create desired categories, websites via admin interface

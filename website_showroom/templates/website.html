@@ -1,0 +1,11 @@
+<div class="project">
+    <a href="{{ website.url }}" target="_blank">
+    <img src="{{ website.screenshot.url }}" width="{{ website.screenshot.width }}" height="{{ website.screenshot.height }}"></a>
+    <div class="title" style="color:{{ website.category.active_color }}">{{ website.title }}</div>
+    {% if website.country %}
+        <div class="flag"><img src="{{ STATIC_URL }}world/{{ website.country }}.png" width="25" height="15"></div>
+    {% endif %}
+    <div style="clear:both;"></div>
+    <div class="description">{{ website.desc }}</div>
+    <div class="url"><a href="{{ website.url }}" target="_blank" style="color:{{ website.category.active_color }};">{{ website.url }}</a></div>
+</div>

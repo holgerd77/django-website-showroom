@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if query %}
+    {% for result in page.object_list %}
+        {% include "website.html" with website=result.object %}
+    {% empty %}    
+    <p>No results found.</p>
+    {% endfor %}
+{% else %}
+    <p>Error.</p>
+{% endif %}
+{% endblock %}
