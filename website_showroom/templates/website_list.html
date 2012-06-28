@@ -5,7 +5,7 @@
     {% for website in website_list %}
         <div class="project">
         <a href="{{ website.url }}" target="_blank">
-        <img src="{{ website.screenshot.url }}" width="{{ website.screenshot.width }}" height="{{ website.screenshot.height }}"></a>
+        <img src="{{ website.screenshot.url }}" width="300" height="200"></a>
         <div class="title" style="color:{{ website.category.active_color }}">{{ website.title }}</div>
         {% if website.country %}
         <div class="flag"><img src="{{ STATIC_URL }}world/{{ website.country }}.png" width="25" height="15"></div>
