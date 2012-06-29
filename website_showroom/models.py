@@ -48,8 +48,6 @@ class Website(models.Model):
 def post_save_handler(sender, instance, using, **kwargs):
     from PIL import Image
     image = Image.open(instance.screenshot)
-    print "test"
-    print image
     image.thumbnail([300, 200], Image.ANTIALIAS)
     image.save(settings.MEDIA_ROOT + '/' + instance.screenshot.name)
     
