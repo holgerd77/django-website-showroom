@@ -3,11 +3,16 @@ from django.conf import settings
 from website_showroom.models import Edition, Website
 
 class RssFeed(Feed):
-    edition = Edition.objects.all()[0]
+    eds = Edition.objects.all()
     
-    title = edition.rss_title
+    if len(eds) > 0:
+        edition = eds[0] 
+        title = edition.rss_title
+        description = edition.rss_description
+    else:
+        title = 'RSS Feed'
+        description = 'RSS Feed for showroom'
     link = '/rss/'
-    description = edition.rss_description
 
     def items(self):
         return Website.objects.order_by('-pub_date')[:12]
