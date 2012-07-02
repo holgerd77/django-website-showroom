@@ -1,10 +1,48 @@
-import uuid
+import os, uuid
 from django.conf import settings
-from django.core.exceptions import ObjectDoesNotExist
 from django.db import models
 from django.db.models.signals import post_save, pre_delete
 from django.dispatch import receiver
-import os.path
+
+
+class Edition(models.Model):
+    help_text = "Main title shown on page"
+    site_title = models.CharField(max_length=40, help_text=help_text)
+    help_text = "2-letter-country-code for showing a corresponding flag (e.g. 'de', 'en'). Careful, not existing code will break site."
+    country = models.CharField(max_length=2, help_text=help_text)
+    help_text = "Numeric value for edition order. Tip: Use 100-200-300-... steps for easy reordering. "
+    help_text += "Edition first in order will be used as edition default."
+    order = models.IntegerField(help_text=help_text)
+    help_text = "Something like 'English version', used for mouseover on flag"
+    short_description = models.CharField(max_length=40, help_text=help_text)
+    help_text = "Used for html title tag"
+    html_title = models.CharField(max_length=100, help_text=help_text)
+    help_text = "Subtitle (HTML tags possible)"
+    site_subtitle = models.CharField(max_length=125, help_text=help_text)
+    help_text = "Title for rss feed"
+    rss_title = models.CharField(max_length=100, help_text=help_text)
+    help_text = "Description for rss feed"
+    rss_description = models.CharField(max_length=200, help_text=help_text)
+    help_text = "Optional, link to Facebook page"
+    facebook_url = models.CharField(max_length=90, blank=True, null=True, help_text=help_text)
+    help_text = "Something like - e.g. - 'Home'"
+    home_menu_title = models.CharField(max_length=40, help_text=help_text)
+    help_text = "HTML color code, e.g. '#003300"
+    home_menu_color = models.CharField(max_length=7, help_text=help_text)
+    help_text = "HTML color code, e.g. '#006600"
+    home_menu_active_color = models.CharField(max_length=7, help_text=help_text)
+    help_text = "Number of websites for home category"
+    home_num_websites = models.IntegerField(help_text=help_text)
+    help_text = "Left footer (HTML tags possible)"
+    footer_left = models.CharField(max_length=200, help_text=help_text)
+    help_text = "Right footer (HTML tags possible)"
+    footer_right = models.CharField(max_length=200, help_text=help_text)
+    help_text = "Title of contact navi"
+    contact_title = models.CharField(max_length=40, help_text=help_text)
+    help_text = "Complete HTML content of contact page, with <p>, <br> and all that stuff"
+    contact_html = models.TextField()
+    comments = models.TextField(blank=True)
+
 
 class Category(models.Model):
     name = models.CharField(max_length=40)

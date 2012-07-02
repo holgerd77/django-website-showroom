@@ -1,11 +1,13 @@
 from django.contrib.syndication.views import Feed
 from django.conf import settings
-from website_showroom.models import Website
+from website_showroom.models import Edition, Website
 
 class RssFeed(Feed):
-    title = settings.RSS_TITLE
+    edition = Edition.objects.all()[0]
+    
+    title = edition.rss_title
     link = '/rss/'
-    description = settings.RSS_DESCRIPTION
+    description = edition.rss_description
 
     def items(self):
         return Website.objects.order_by('-pub_date')[:12]

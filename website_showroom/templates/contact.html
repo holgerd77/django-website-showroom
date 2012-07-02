@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<b>{{ CONTACT_TITLE }}</b><br /><br />
+<b>{{ edition.contact_title }}</b><br /><br />
 
 {% autoescape off %} 
-{{ CONTACT_HTML }}
+{{ edition.contact_html }}
 {% endautoescape %}
 {% endblock %}

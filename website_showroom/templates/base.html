@@ -2,7 +2,7 @@
 
 <html>
 <head>
-    <title>{{ HTML_TITLE }}{% if act_cat %} - {{ act_cat.name }}{% endif %}</title>
+    <title>{{ edition.html_title }}{% if act_cat %} - {{ act_cat.name }}{% endif %}</title>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 
     <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/rss/" />
@@ -31,10 +31,10 @@
 <div id="header">
 
     <div style="float:left;">
-        <a href="/" style="text-decoration:none"><h1 id="page_header">{{ SITE_TITLE }}</h1></a>
+        <a href="/" style="text-decoration:none"><h1 id="page_header">{{ edition.site_title }}</h1></a>
     </div>
     <div style="float:right;text-align:right;margin-right:25px;">
-        <h2 id="sub_header">{% autoescape off %}{{ SITE_SUBTITLE }}{% endautoescape %}</h2>
+        <h2 id="sub_header">{% autoescape off %}{{ edition.site_subtitle }}{% endautoescape %}</h2>
     </div>
 
 </div>
@@ -44,7 +44,7 @@
 {% if FACEBOOK_URL %}
 <div style="float:right;margin-top:40px;">
     <script src="http://connect.facebook.net/de_DE/all.js#xfbml=1">
-    </script><fb:like href="{{ FACEBOOK_URL }}" layout="button_count" show_faces="false" width="135" font=""></fb:like>
+    </script><fb:like href="{{ edition.facebook_url }}" layout="button_count" show_faces="false" width="135" font=""></fb:like>
 </div>
 {% endif %}
 
@@ -80,9 +80,10 @@
 
 <div style="clear:both;"></div>
 <div id="footer">
-    <div style="float:left;">{% autoescape off %}{{ FOOTER_LEFT }}{% endautoescape %}</div>
-    <div style="float:right;margin-right:25px;">{% autoescape off %}{{ FOOTER_RIGHT }}{% endautoescape %}
-    | <a href="https://github.com/holgerd77/django-website-showroom" target="_blank">Source Code (GitHub)</a> | <a href="/contact/">{{ CONTACT_TITLE }}</a></div>
+    <div style="float:left;">{% autoescape off %}{{ edition.footer_left }}{% endautoescape %}</div>
+    <div style="float:right;margin-right:25px;">{% autoescape off %}{{ edition.footer_right }}{% endautoescape %}
+    | <a href="https://github.com/holgerd77/django-website-showroom" target="_blank">Source Code (GitHub)</a>
+     | <a href="/contact/">{{ edition.contact_title }}</a></div>
     <div style="clear:both;"></div>
 </div>
 
