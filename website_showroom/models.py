@@ -43,14 +43,19 @@ class Edition(models.Model):
     contact_html = models.TextField()
     comments = models.TextField(blank=True)
     
+    ordering = ['order']
+    
     def __unicode__(self):
         return self.site_title + " (" + self.country + ")"
 
 
 class Category(models.Model):
-    name = models.CharField(max_length=40)
-    url_name = models.SlugField(max_length=40, help_text="Every url-conform string except 'contact'")
-    order = models.IntegerField(help_text="Numeric value for category order. Tip: Use 100-200-300-... steps for easy reordering.")
+    help_text = "Only used in admin context, not displayed on site (edition specific category names)"
+    name = models.CharField(max_length=40, help_text=help_text)
+    help_text = "DEPRECATED! Will be removed in the future, please ignore"
+    url_name = models.SlugField(max_length=40, help_text=help_text)
+    help_text = "DEPRECATED! Will be removed in the future, please ignore"
+    order = models.IntegerField(help_text=help_text)
     color = models.CharField(max_length=7, help_text="Format: #ffffff")
     active_color = models.CharField(max_length=7, help_text="Format: #ffffff")
 
@@ -58,6 +63,19 @@ class Category(models.Model):
 
     def __unicode__(self):
         return self.name
+
+
+class EditionCategory(models.Model):
+    edition = models.ForeignKey(Edition)
+    category = models.ForeignKey(Category)
+    help_text = "Edition specific category name"
+    name = models.CharField(max_length=40, help_text=help_text)
+    help_text = "Every url-conform string except 'contact'"
+    url_name = models.SlugField(max_length=40, help_text=help_text)
+    help_text = "Numeric value for category order. Tip: Use 100-200-300-... steps for easy reordering."
+    order = models.IntegerField(help_text=help_text)
+    
+    ordering = ['order']
 
 
 def get_path(instance, filename):

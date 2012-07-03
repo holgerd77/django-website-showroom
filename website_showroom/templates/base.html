@@ -2,12 +2,13 @@
 
 <html>
 <head>
-    <title>{{ edition.html_title }}{% if act_cat %} - {{ act_cat.name }}{% endif %}</title>
+    <title>{{ act_edition.html_title }}{% if act_ed_cat %} - {{ act_ed_cat.name }}{% endif %}</title>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 
-    <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/rss/" />
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/{{ act_edition.country }}/rss/" />
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+
     <link rel="stylesheet" href="/static/content.css" type="text/css">
 
 </head>
@@ -20,9 +21,17 @@
         &nbsp;
     </div>
     <div style="float:right;text-align:right;margin-right:25px;">
-        <form method="get" action="/search/">
+        <form method="get" action="/{{ act_edition.country }}/search/" style="display: inline-block;">
             <input type="search" maxlength="50" size="25" placeholder="Search" name="q" value="{{ query }}" id="search_text" onKeyPress="if(event && event.keyCode==13) { if(document.getElementById('search_text').value != '') document.forms[0].submit();else return false;}" autocomplete="off"/>
         </form>
+        
+        {% for edition in edition_list %}
+        <div style="display:inline-block;vertical-align: middle;margin-left: 2px;">
+          <a href="/{{ edition.country }}/">
+            <img src="{{ STATIC_URL }}world/{{ edition.country }}.png" width="25" height="15">
+          </a>
+        </div>
+        {% endfor %}
     </div>
 </div>
 
@@ -31,10 +40,10 @@
 <div id="header">
 
     <div style="float:left;">
-        <a href="/" style="text-decoration:none"><h1 id="page_header">{{ edition.site_title }}</h1></a>
+        <a href="/{{ act_edition.country }}/" style="text-decoration:none"><h1 id="page_header">{{ act_edition.site_title }}</h1></a>
     </div>
     <div style="float:right;text-align:right;margin-right:25px;">
-        <h2 id="sub_header">{% autoescape off %}{{ edition.site_subtitle }}{% endautoescape %}</h2>
+        <h2 id="sub_header">{% autoescape off %}{{ act_edition.site_subtitle }}{% endautoescape %}</h2>
     </div>
 
 </div>
@@ -44,25 +53,25 @@
 {% if FACEBOOK_URL %}
 <div style="float:right;margin-top:40px;">
     <script src="http://connect.facebook.net/de_DE/all.js#xfbml=1">
-    </script><fb:like href="{{ edition.facebook_url }}" layout="button_count" show_faces="false" width="135" font=""></fb:like>
+    </script><fb:like href="{{ act_edition.facebook_url }}" layout="button_count" show_faces="false" width="135" font=""></fb:like>
 </div>
 {% endif %}
 
 {% block menu %}
 <div id="menu">
-{% for cat in category_list %}
+{% for ed_cat in ed_category_list %}
     <h3 class="menu_elem" id="menu_{{ forloop.counter }}" 
-        style="background-color:{% if cat == act_cat %}{{cat.active_color}}{% else %}{{ cat.color }}{% endif %}">
-        <a href="/{{ cat.url_name }}" style="{% if cat == act_cat %}text-decoration:underline;{% endif %}">{{ cat.name }}</a></h3>
+        style="background-color:{% if ed_cat == act_ed_cat %}{{ed_cat.category.active_color}}{% else %}{{ ed_cat.category.color }}{% endif %}">
+        <a href="/{{ act_edition.country }}/{{ ed_cat.url_name }}" style="{% if ed_cat == act_ed_cat %}text-decoration:underline;{% endif %}">{{ ed_cat.name }}</a></h3>
     <script>
         $("#menu_{{ forloop.counter }}").mouseover(function() {
-            $(this).css("background-color", "{{ cat.active_color }}");
+            $(this).css("background-color", "{{ ed_cat.category.active_color }}");
         });
         $("#menu_{{ forloop.counter }}").mouseout(function() {
-            $(this).css("background-color", "{% if cat == act_cat %}{{ cat.active_color }}{% else %}{{ cat.color }}{% endif %}");
+            $(this).css("background-color", "{% if ed_cat == act_ed_cat %}{{ ed_cat.category.active_color }}{% else %}{{ ed_cat.category.color }}{% endif %}");
         });
         $("#menu_{{ forloop.counter }}").click(function(event) {
-            location.href="/";
+            location.href="/{{ act_edition.country }}/";
         });
     </script>
 {% endfor %}
@@ -80,10 +89,10 @@
 
 <div style="clear:both;"></div>
 <div id="footer">
-    <div style="float:left;">{% autoescape off %}{{ edition.footer_left }}{% endautoescape %}</div>
-    <div style="float:right;margin-right:25px;">{% autoescape off %}{{ edition.footer_right }}{% endautoescape %}
+    <div style="float:left;">{% autoescape off %}{{ act_edition.footer_left }}{% endautoescape %}</div>
+    <div style="float:right;margin-right:25px;">{% autoescape off %}{{ act_edition.footer_right }}{% endautoescape %}
     | <a href="https://github.com/holgerd77/django-website-showroom" target="_blank">Source Code (GitHub)</a>
-     | <a href="/contact/">{{ edition.contact_title }}</a></div>
+     | <a href="/{{ act_edition.country }}/contact/">{{ act_edition.contact_title }}</a></div>
     <div style="clear:both;"></div>
 </div>
 
