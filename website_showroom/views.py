@@ -2,7 +2,7 @@ from django.conf import settings
 from django.core.exceptions import ImproperlyConfigured
 from django.shortcuts import get_object_or_404, render_to_response
 from django.template import RequestContext
-from website_showroom.models import Edition, Category, Website
+from website_showroom.models import Edition, Category, EditionWebsite
 
 def get_edition():
     eds = Edition.objects.all()
@@ -24,9 +24,15 @@ def index(request):
     category_list = list(Category.objects.all())
     home_dummy_cat = get_home_dummy_cat(edition)
     category_list.insert(0, home_dummy_cat)
-    website_list = Website.objects.all().order_by('-pub_date')[:edition.home_num_websites]
-    c = RequestContext(request, {'edition': edition, 'category_list': category_list, 'act_cat': home_dummy_cat, 'website_list': website_list})
+    ed_website_list = EditionWebsite.objects.filter(edition=edition).order_by('-pub_date')[:edition.home_num_websites]
+    c = RequestContext(request, {
+        'edition': edition, 
+        'category_list': category_list, 
+        'act_cat': home_dummy_cat, 
+        'ed_website_list': ed_website_list
+    })
     return render_to_response('website_list.html', c)
+
 
 def category(request, url_name):
     edition = get_edition()
@@ -34,8 +40,8 @@ def category(request, url_name):
     home_dummy_cat = get_home_dummy_cat(edition)
     category_list.insert(0, home_dummy_cat)
     act_cat = get_object_or_404(Category, url_name=url_name)
-    website_list = act_cat.website_set.all().order_by('order')
-    c = RequestContext(request, {'edition': edition, 'category_list': category_list, 'act_cat': act_cat, 'website_list': website_list})
+    ed_website_list = EditionWebsite.objects.filter(edition=edition, website__category=act_cat).order_by('-pub_date')
+    c = RequestContext(request, {'edition': edition, 'category_list': category_list, 'act_cat': act_cat, 'ed_website_list': ed_website_list})
     return render_to_response('website_list.html', c)
 
 def contact(request):

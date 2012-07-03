@@ -42,6 +42,9 @@ class Edition(models.Model):
     help_text = "Complete HTML content of contact page, with <p>, <br> and all that stuff"
     contact_html = models.TextField()
     comments = models.TextField(blank=True)
+    
+    def __unicode__(self):
+        return self.site_title + " (" + self.country + ")"
 
 
 class Category(models.Model):
@@ -62,14 +65,15 @@ def get_path(instance, filename):
     path = 'screenshots/' + 's_' + str(uuid.uuid1()) + filename[pos:]
     return path
 
-
 class Website(models.Model):
-    title = models.CharField(max_length=50)
+    help_text = "Generic title, used if no extra edition specific title is provided"
+    title = models.CharField(max_length=50, help_text=help_text)
     category = models.ForeignKey(Category)
-    order = models.IntegerField(help_text="Numeric value for website order. Tip: Use 100-200-300-... steps for easy reordering.")
+    help_text = "DEPRECATED! Will be removed in the future, please ignore"
+    order = models.IntegerField(help_text=help_text)
     help_text = "Optional, 2-letter-country-code for showing a corresponding flag (e.g. 'de', 'en'). Careful, not existing code will break site."
     country = models.CharField(max_length=2, null=True, blank=True, help_text=help_text)
-    help_text = "Tip: Keep it short, space is limited!"
+    help_text = "DEPRECATED! Will be removed in the future, please ignore"
     desc = models.TextField(help_text=help_text)
     help_text = "Image file, size: 300x200, name will be unified. If you provide a larger file image will be resized (use same proportions, e.g. 600x400 or 750x500)."
     screenshot = models.ImageField(upload_to=get_path, help_text=help_text)
@@ -100,3 +104,22 @@ def pre_delete_handler(sender, instance, using, **kwargs):
 
 pre_delete.connect(pre_delete_handler, sender=Website)
 post_save.connect(post_save_handler, sender=Website)
+
+
+class EditionWebsite(models.Model):
+    edition = models.ForeignKey(Edition)
+    website = models.ForeignKey(Website)
+    help_text = "Edition specific title, if left empty, generic title is used"
+    title = models.CharField(max_length=50, null=True, blank=True, help_text=help_text)
+    help_text = "Edition specific description"
+    desc = models.TextField(help_text=help_text)
+    help_text = "Numeric value for website order. Tip: Use 100-200-300-... steps for easy reordering."
+    order = models.IntegerField(help_text=help_text)
+    pub_date = models.DateTimeField('date published', auto_now_add=True)
+    
+    
+    def get_title(self):
+        if self.title:
+            return self.title
+        else:
+            return self.website.title

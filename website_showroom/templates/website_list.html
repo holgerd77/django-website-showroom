@@ -1,18 +1,18 @@
 {% extends 'base.html' %}
 
 {% block content %}
-{% if website_list %}
-    {% for website in website_list %}
+{% if ed_website_list %}
+    {% for ed_website in ed_website_list %}
         <div class="project">
-        <a href="{{ website.url }}" target="_blank">
-        <img src="{{ website.screenshot.url }}" width="300" height="200"></a>
-        <div class="title" style="color:{{ website.category.active_color }}">{{ website.title }}</div>
-        {% if website.country %}
-        <div class="flag"><img src="{{ STATIC_URL }}world/{{ website.country }}.png" width="25" height="15"></div>
+        <a href="{{ ed_website.website.url }}" target="_blank">
+        <img src="{{ ed_website.website.screenshot.url }}" width="300" height="200"></a>
+        <div class="title" style="color:{{ ed_website.website.category.active_color }}">{{ ed_website.get_title }}</div>
+        {% if ed_website.website.country %}
+        <div class="flag"><img src="{{ STATIC_URL }}world/{{ ed_website.website.country }}.png" width="25" height="15"></div>
         {% endif %}
         <div style="clear:both;"></div>
-        <div class="description">{{ website.desc }}</div>
-        <div class="url"><a href="{{ website.url }}" target="_blank" style="color:{{ website.category.active_color }};">{{ website.url }}</a></div>
+        <div class="description">{{ ed_website.desc }}</div>
+        <div class="url"><a href="{{ ed_website.website.url }}" target="_blank" style="color:{{ ed_website.website.category.active_color }};">{{ ed_website.website.url }}</a></div>
         </div>
     {% endfor %}
 {% else %}
