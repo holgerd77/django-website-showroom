@@ -85,7 +85,7 @@ def category(request, ed_country, url_name):
     home_dummy_ed_cat = get_home_dummy_ed_cat(act_edition)
     ed_category_list.insert(0, home_dummy_ed_cat)
     act_ed_cat = get_object_or_404(EditionCategory, url_name=url_name)
-    ed_website_list = EditionWebsite.objects.filter(edition=act_edition, website__category=act_ed_cat.category).order_by('-pub_date')
+    ed_website_list = EditionWebsite.objects.filter(edition=act_edition, website__category=act_ed_cat.category).order_by('order')
     c = RequestContext(request, {
         'edition_list': get_edition_list(),
         'act_edition': act_edition, 
