@@ -11,9 +11,7 @@ class EditionCategoryInline(admin.TabularInline):
     extra = 1
 
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ('name', 'order', 'color', 'active_color')
-    ordering = ['order']
-    prepopulated_fields = {"url_name": ("name",)}
+    list_display = ('name', 'color', 'active_color')
     inlines = [
         EditionCategoryInline,
     ]
@@ -23,10 +21,10 @@ class EditionWebsiteInline(admin.TabularInline):
     extra = 1
 
 class WebsiteAdmin(admin.ModelAdmin):
-    list_display = ('title', 'category', 'order', 'country', 'url')
+    list_display = ('title', 'category', 'country', 'url')
     list_filter = ['category']
     search_fields = ['title']
-    ordering = ['category', 'order']
+    ordering = ['category']
     inlines = [
         EditionWebsiteInline,
     ]

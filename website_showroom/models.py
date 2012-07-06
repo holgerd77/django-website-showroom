@@ -52,14 +52,8 @@ class Edition(models.Model):
 class Category(models.Model):
     help_text = "Only used in admin context, not displayed on site (edition specific category names)"
     name = models.CharField(max_length=40, help_text=help_text)
-    help_text = "DEPRECATED! Will be removed in the future, please ignore"
-    url_name = models.SlugField(max_length=40, help_text=help_text)
-    help_text = "DEPRECATED! Will be removed in the future, please ignore"
-    order = models.IntegerField(help_text=help_text)
     color = models.CharField(max_length=7, help_text="Format: #ffffff")
     active_color = models.CharField(max_length=7, help_text="Format: #ffffff")
-
-    ordering = ['order']
 
     def __unicode__(self):
         return self.name
@@ -87,18 +81,14 @@ class Website(models.Model):
     help_text = "Generic title, used if no extra edition specific title is provided"
     title = models.CharField(max_length=50, help_text=help_text)
     category = models.ForeignKey(Category)
-    help_text = "DEPRECATED! Will be removed in the future, please ignore"
-    order = models.IntegerField(help_text=help_text)
     help_text = "Optional, 2-letter-country-code for showing a corresponding flag (e.g. 'de', 'en'). Careful, not existing code will break site."
     country = models.CharField(max_length=2, null=True, blank=True, help_text=help_text)
-    help_text = "DEPRECATED! Will be removed in the future, please ignore"
-    desc = models.TextField(help_text=help_text)
     help_text = "Image file, size: 300x200, name will be unified. If you provide a larger file image will be resized (use same proportions, e.g. 600x400 or 750x500)."
     screenshot = models.ImageField(upload_to=get_path, help_text=help_text)
     url = models.CharField(max_length=90)
     pub_date = models.DateTimeField('date published', auto_now_add=True)
 
-    ordering = ['category', 'order']
+    ordering = ['category']
 
     def __unicode__(self):
         return self.title
