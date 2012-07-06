@@ -1,0 +1,2 @@
+{{ object.get_title }}
+{{ object.desc }}

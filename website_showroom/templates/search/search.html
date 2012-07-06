@@ -3,7 +3,7 @@
 {% block content %}
 {% if query %}
     {% for result in page.object_list %}
-        {% include "website.html" with website=result.object %}
+        {% include "website.html" with ed_website=result.object %}
     {% empty %}    
     <p>No results found.</p>
     {% endfor %}

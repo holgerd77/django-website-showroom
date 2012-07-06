@@ -8,7 +8,7 @@ admin.autodiscover()
 urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^(?P<ed_country>[-\w]+)/rss/$', RssFeed()), 
-    url(r'^(?P<ed_country>[-\w]+)/search/', include('haystack.urls')),
+    url(r'^search/', include('haystack.urls')),
 
     url(r'^$', 'website_showroom.views.act_edition_redirect'),
     url(r'^(?P<ed_country>[-\w]+)/$', 'website_showroom.views.index'),

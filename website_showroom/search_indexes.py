@@ -1,8 +1,8 @@
 from haystack import indexes
-from website_showroom.models import Website
+from website_showroom.models import EditionWebsite
 
-class WebsiteIndex(indexes.RealTimeSearchIndex, indexes.Indexable):
+class EditionWebsiteIndex(indexes.RealTimeSearchIndex, indexes.Indexable):
     text = indexes.CharField(document=True, use_template=True)
 
     def get_model(self):
-        return Website
+        return EditionWebsite
