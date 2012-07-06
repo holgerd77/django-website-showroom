@@ -114,7 +114,7 @@ class Website(models.Model):
         for ed_ws in ed_websites:
             if len(ret) > 0:
                 ret += ' | '
-            ret += ed_ws.edition.country
+            ret += ed_ws.edition.country + ' (' + str(ed_ws.order) + ')'
         return ret
 
 
