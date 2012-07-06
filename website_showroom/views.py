@@ -50,7 +50,7 @@ def get_home_dummy_ed_cat(act_edition):
 
 
 def get_ed_category_list(act_edition):
-    ed_cats = EditionCategory.objects.filter(edition=act_edition)
+    ed_cats = EditionCategory.objects.filter(edition=act_edition).order_by('order')
     return list(ed_cats)
 
 
