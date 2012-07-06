@@ -11,7 +11,7 @@ class EditionCategoryInline(admin.TabularInline):
     extra = 1
 
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ('name', 'color', 'active_color')
+    list_display = ('name', 'editions', 'color', 'active_color')
     inlines = [
         EditionCategoryInline,
     ]
@@ -21,8 +21,8 @@ class EditionWebsiteInline(admin.TabularInline):
     extra = 1
 
 class WebsiteAdmin(admin.ModelAdmin):
-    list_display = ('title', 'category', 'country', 'url')
-    list_filter = ['category']
+    list_display = ('title', 'category', 'editions', 'country', 'url')
+    list_filter = ['category', 'country',]
     search_fields = ['title']
     ordering = ['category']
     inlines = [

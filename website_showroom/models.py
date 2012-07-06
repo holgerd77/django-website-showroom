@@ -58,6 +58,18 @@ class Category(models.Model):
     def __unicode__(self):
         return self.name
 
+    def get_ed_categories(self):
+        return EditionCategory.objects.filter(category_id=self.id)
+    
+    def editions(self):
+        ed_categories = self.get_ed_categories()
+        ret = ''
+        for ed_c in ed_categories:
+            if len(ret) > 0:
+                ret += ' | '
+            ret += ed_c.edition.country
+        return ret
+
 
 class EditionCategory(models.Model):
     edition = models.ForeignKey(Edition)
@@ -92,6 +104,18 @@ class Website(models.Model):
 
     def __unicode__(self):
         return self.title
+    
+    def get_ed_websites(self):
+        return EditionWebsite.objects.filter(website_id=self.id)
+
+    def editions(self):
+        ed_websites = self.get_ed_websites()
+        ret = ''
+        for ed_ws in ed_websites:
+            if len(ret) > 0:
+                ret += ' | '
+            ret += ed_ws.edition.country
+        return ret
 
 
 @receiver(post_save, sender=Website)
@@ -124,7 +148,6 @@ class EditionWebsite(models.Model):
     help_text = "Numeric value for website order. Tip: Use 100-200-300-... steps for easy reordering."
     order = models.IntegerField(help_text=help_text)
     pub_date = models.DateTimeField('date published', auto_now_add=True)
-    
     
     def get_title(self):
         if self.title:
