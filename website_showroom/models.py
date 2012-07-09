@@ -95,7 +95,10 @@ class Website(models.Model):
     category = models.ForeignKey(Category)
     help_text = "Optional, 2-letter-country-code for showing a corresponding flag (e.g. 'de', 'en'). Careful, not existing code will break site."
     country = models.CharField(max_length=2, null=True, blank=True, help_text=help_text)
-    help_text = "Image file, size: 300x200, name will be unified. If you provide a larger file image will be resized (use same proportions, e.g. 600x400 or 750x500)."
+    help_text = "Image file, size: 300x200, name will be unified. "
+    help_text += "Larger file image will be resized. "
+    help_text += "Greater height will be cropped (making screen capture with website width "
+    help_text += "and height generously higher than aspect ratio is easiest)"
     screenshot = models.ImageField(upload_to=get_path, help_text=help_text)
     url = models.CharField(max_length=90)
     pub_date = models.DateTimeField('date published', auto_now_add=True)
@@ -122,6 +125,14 @@ class Website(models.Model):
 def post_save_handler(sender, instance, using, **kwargs):
     from PIL import Image
     image = Image.open(instance.screenshot)
+    thumb_ratio = float(1.5)
+    img_ratio = float(image.size[0]) / float(image.size[1])
+    print "Ratios: T " + str(thumb_ratio) + ", I " + str(img_ratio)
+    # img is relatively heigher than thumb
+    if thumb_ratio > img_ratio:
+        crop_width = image.size[0]
+        crop_height = int(image.size[0] / thumb_ratio)
+        image = image.crop((0, 0, crop_width, crop_height,))
     image.thumbnail([300, 200], Image.ANTIALIAS)
     image.save(settings.MEDIA_ROOT + '/' + instance.screenshot.name)
     
