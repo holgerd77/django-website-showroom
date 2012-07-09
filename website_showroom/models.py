@@ -25,6 +25,10 @@ class Edition(models.Model):
     rss_description = models.CharField(max_length=200, help_text=help_text)
     help_text = "Optional, link to Facebook page"
     facebook_url = models.CharField(max_length=90, blank=True, null=True, help_text=help_text)
+    help_text = "Optional, link to Twitter page"
+    twitter_url = models.CharField(max_length=90, blank=True, null=True, help_text=help_text)
+    help_text = "Optional, link to Google+ page"
+    google_plus_url = models.CharField(max_length=90, blank=True, null=True, help_text=help_text)
     help_text = "Something like - e.g. - 'Home'"
     home_menu_title = models.CharField(max_length=40, help_text=help_text)
     help_text = "HTML color code, e.g. '#003300"

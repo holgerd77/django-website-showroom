@@ -10,6 +10,7 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
 
     <link rel="stylesheet" href="/static/content.css" type="text/css">
+    <link rel="stylesheet" href="/static/lib/font-awesome.css" type="text/css">
 
 </head>
 
@@ -21,12 +22,35 @@
         &nbsp;
     </div>
     <div style="float:right;text-align:right;margin-right:25px;">
+        
+        {% if act_edition.facebook_url %}
+        <div class="header_icons_div">
+          <a href="{{ act_edition.facebook_url }}" target="_blank" title="Facebook">
+            <i class="icon-facebook-sign bootstrap_icon_style"></i>
+          </a>
+        </div>
+        {% endif %}
+        {% if act_edition.twitter_url %}
+        <div class="header_icons_div">
+          <a href="{{ act_edition.twitter_url }}" target="_blank" title="Twitter">
+            <i class="icon-twitter-sign bootstrap_icon_style"></i>
+          </a>
+        </div>
+        {% endif %}
+        {% if act_edition.google_plus_url %}
+        <div class="header_icons_div">
+          <a href="{{ act_edition.google_plus_url }}" target="_blank" title="Google+">
+            <i class="icon-google-plus-sign bootstrap_icon_style"></i>
+          </a>
+        </div>
+        {% endif %}
+      
         <form method="get" action="/search/" style="display: inline-block;">
-            <input type="search" maxlength="50" size="25" placeholder="Search" name="q" value="{{ query }}" id="search_text" onKeyPress="if(event && event.keyCode==13) { if(document.getElementById('search_text').value != '') document.forms[0].submit();else return false;}" autocomplete="off"/>
+            <input type="search" maxlength="50" size="30" placeholder="Search" name="q" value="{{ query }}" id="search_text" onKeyPress="if(event && event.keyCode==13) { if(document.getElementById('search_text').value != '') document.forms[0].submit();else return false;}" autocomplete="off"/>
         </form>
         
         {% for edition in edition_list %}
-        <div style="display:inline-block;vertical-align: middle;margin-left: 2px;">
+        <div class="header_icons_div">
           <a href="/{{ edition.country }}/">
             <img src="{{ STATIC_URL }}world/{{ edition.country }}.png" width="25" height="15">
           </a>

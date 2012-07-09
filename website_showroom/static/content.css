@@ -1,27 +1,10 @@
 /* Layout */
-body {
-	margin: 0;
-	padding: 0;
-}
+body { margin: 0;padding: 0; }
+h1, h2 { margin: 0; padding: 0; }
 
-h1, h2 {
-    margin: 0;
-    padding: 0;
-}
-
-#page  {
-	width: 975px;
-	margin: 25px auto;
-}
-
-#topbar {
-    width: 100%;
-}
-
-#header {
-	width: 100%;
-    padding-top: 20px;
-}
+#page  { width: 975px;margin: 25px auto; }
+#topbar { width: 100%; }
+#header { width: 100%; padding-top: 20px; }
 
 #page_header {
    color: #222;
@@ -29,17 +12,18 @@ h1, h2 {
 	font-style: italic;
    font-size: 3.0em;
 }
-
-#sub_header {
-	color:#282828;
-   font-size: 1.25em;
+#sub_header { color:#282828; font-size: 1.25em; }
+.header_icons_div {
+	display:inline-block;
+	vertical-align: middle;
+	margin-left: 2px;
 }
-
-#menu {
-	margin-top: 40px;
-	width: 100%;
+.bootstrap_icon_style {
+	font-size:18px !important;
+	color:#222 !important;
+	text-decoration: none !important;
 }
-
+#menu { margin-top: 40px;width: 100%; }
 .menu_elem, h3 {
 	margin-top:0; margin-left: 0; margin-bottom: 0;
 	font-size: 1em;
@@ -48,14 +32,12 @@ h1, h2 {
 	padding: 10px;
 	margin-right: 2px;
 }
-
 .menu_elem a, h3 a {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 0.9em;
 	color: #fdfdfd;
 	text-decoration: none;
 }
-
 #content {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 0.9em;
@@ -63,7 +45,6 @@ h1, h2 {
 	margin-top: 50px;
 	width: 100%;
 }
-
 .project {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 0.9em;
@@ -72,34 +53,16 @@ h1, h2 {
 	height: 379px;
 	margin-right: 25px;
 }
-
-.project img {
-	border: 1px solid #ccc;
-	margin-bottom: 14px;
-}
-
-.project a {
-}
-
+.project img { border: 1px solid #ccc;margin-bottom: 14px; }
+.project a { }
 .project .title {
 	float: left;
 	font-weight: bold;
 	margin-bottom: 12px;
 }
-
-.project .flag {
-	float: right;
-	margin-left: 10px;
-}
-
-.project .description {
-	height: 65px;
-	margin-bottom: 10px;
-}
-
-.project .url {
-}
-
+.project .flag { float: right; margin-left: 10px; }
+.project .description { height: 65px; margin-bottom: 10px; }
+.project .url { }
 #footer {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 0.8em;
@@ -108,11 +71,8 @@ h1, h2 {
 	margin-top: 30px;
 	margin-bottom: 40px;
 }
-
 #footer a {
 	font-family: inherit;
 	font-size: inherit;
 	color: inherit;
 }
-
-
