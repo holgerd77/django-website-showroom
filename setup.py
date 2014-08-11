@@ -11,6 +11,7 @@ setup(
     url='https://github.com/holgerd77/django-website-showroom/',
     long_description=open(os.path.join(os.path.dirname(__file__), 'README.rst')).read(),
     packages=find_packages(),
+    include_package_data=True,
     #install_requires=[
         #'Django>=1.2',
         #'Scrapy>=0.14',
