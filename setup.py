@@ -1,4 +1,4 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 import os
 
@@ -10,9 +10,7 @@ setup(
     author_email='Holger.Drewes@googlemail.com',
     url='https://github.com/holgerd77/django-website-showroom/',
     long_description=open(os.path.join(os.path.dirname(__file__), 'README.rst')).read(),
-    packages=[
-        'website_showroom',
-    ],
+    packages=find_packages(),
     #install_requires=[
         #'Django>=1.2',
         #'Scrapy>=0.14',
