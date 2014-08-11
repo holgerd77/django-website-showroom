@@ -12,7 +12,6 @@ setup(
     long_description=open(os.path.join(os.path.dirname(__file__), 'README.rst')).read(),
     packages=[
         'website_showroom',
-        'website_showroom.helper',
     ],
     #install_requires=[
         #'Django>=1.2',
