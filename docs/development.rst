@@ -12,4 +12,12 @@ Release Notes
 * Replaced ``PIL`` requirement with ``Pillow``
 * Support for ``Django 1.8`` (older versions dropped), coming from ``1.4`` following adoptions are necessary:
 
-  * ``ALLOWED_HOSTS`` has to be added to ``settings.py``
+  * ``ALLOWED_HOSTS`` has to be added to ``settings.py`` of Django project
+  * ``python manage.py migrate`` has to be run to apply/recognize the new ``Django`` migrations
+
+* Replaced ``South`` migrations with re-generated ``Django`` internal migrations
+
+
+**Changes in version 0.1** (A long time ago...)
+
+* Initial version, just existing in ``master`` branch, no dedicated ``tags`` or ``pip`` releases yet

@@ -5,9 +5,9 @@ Installation
 Requirements
 ------------
 - Python 2.7+ (no Python 3 support yet!)
-- `Django 1.4 <https://www.djangoproject.com/>`_ (Django 1.5+ not supported yet!)
-- `Hackstack 2.0 <http://haystacksearch.org/>`_ (Search module for Django)
-- `Whoosh 2.4 <https://pypi.python.org/pypi/Whoosh/>`_ (Full-text search enginge used for django-haystack)
+- `Django 1.8 <https://www.djangoproject.com/>`_ (Django 1.9+ not supported yet!)
+- `Hackstack 2.4 <http://haystacksearch.org/>`_ (Search module for Django)
+- `Whoosh 2.5 <https://pypi.python.org/pypi/Whoosh/>`_ (Full-text search enginge used for django-haystack)
 - `Pillow <https://pypi.python.org/pypi/Pillow/2.9.0>`_
 
 Manual Installation

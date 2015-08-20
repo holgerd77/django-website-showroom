@@ -13,9 +13,9 @@ setup(
     packages=find_packages(),
     include_package_data=True,
     install_requires=[
-        'Django>=1.4,<1.5',
-        'django-haystack==2.0.0',
-        'Whoosh==2.4.1',
+        'Django>=1.8,<1.9',
+        'django-haystack==2.4',
+        'Whoosh==2.5',
         'Pillow',
     ],
     classifiers=[
