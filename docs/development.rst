@@ -16,7 +16,10 @@ Release Notes
   * ``python manage.py migrate`` has to be run to apply/recognize the new ``Django`` migrations
 
 * Replaced ``South`` migrations with re-generated ``Django`` internal migrations
-
+* Setup instructions in docs
+* New ``example_project`` Django project with basic Color Website Showroom example
+* Section in docs describing how to create a showroom website
+* Fixed some bugs
 
 **Changes in version 0.1** (A long time ago...)
 
