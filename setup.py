@@ -12,13 +12,12 @@ setup(
     long_description=open(os.path.join(os.path.dirname(__file__), 'README.rst')).read(),
     packages=find_packages(),
     include_package_data=True,
-    #install_requires=[
-        #'Django>=1.2',
-        #'Scrapy>=0.14',
-        # Scheduling
-        #'django-kombu',
-        #'django-celery',
-    #],
+    install_requires=[
+        'Django>=1.4,<1.5',
+        'django-haystack==2.0.0',
+        'Whoosh==2.4.1',
+        'Pillow',
+    ],
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Environment :: Web Environment',

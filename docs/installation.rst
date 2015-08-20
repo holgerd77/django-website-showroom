@@ -4,17 +4,22 @@ Installation
 
 Requirements
 ------------
-- Python v.2.x (Tested on 2.7, 2.6 should work)
-- Django v.1.4
-- django-haystack v.2.0 (Search module for Django)
-- PIL
-- Whoosh v.2.4.1 (Full-text search enginge used for django-haystack)
-- django-debug-toolbar (optional, if you don't have it installed, comment out "debug_toolbar" in INSTALLED_APPS in settings.py)
+- Python v.2.7+ (no Python 3 support yet!)
+- `Django v.1.4 <https://www.djangoproject.com/>`_
+- `Hackstack v.2.0 <http://haystacksearch.org/>`_ (Search module for Django)
+- `Whoosh v.2.4 <https://pypi.python.org/pypi/Whoosh/>`_ (Full-text search enginge used for django-haystack)
+- `Pillow <https://pypi.python.org/pypi/Pillow/2.9.0>`_
 
-Installation/Setup
-------------------
-- Install requirement libraries from above, probably most easy in a virtualenv environment
-- Install showroom sources from GitHub
-- Create your project, add ''website_showroom'' as an app
+Manual Installation
+-------------------
+- Clone source repository from `GitHub <https://github.com/holgerd77/django-website-showroom>`_
+- Create a virtual environment with ``virtualenv``
+- Install the requirements with ``pip install -r requirements.txt``
+- Manually link the ``website_showroom`` folder to the ``site-packages`` folder of your environment
+
+Setup
+-----
+- Create a separate ``Django`` project
+- Add ``website_showroom`` to the ``INSTALLED_APPS`` in ``settings.py``
 - Customize your site's title, subtitle,... via settings.py (see opendata-showroom-org GitHub project as example)
 - Create desired categories, websites via admin interface
