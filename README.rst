@@ -12,4 +12,4 @@ Features
 - No language dependent static code
 
 
-For notes on installation and usage see the documentation on `ReadTheDocs <http://django-website-showroom.readthedocs.org>`_.
+For notes on installation and usage see the `documentation<http://django-website-showroom.readthedocs.org>`_.
