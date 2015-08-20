@@ -23,6 +23,7 @@ Contents
    :maxdepth: 2
 
    installation
+   create_showroom
    development
 
 

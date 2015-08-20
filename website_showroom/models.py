@@ -31,9 +31,9 @@ class Edition(models.Model):
     google_plus_url = models.CharField(max_length=90, blank=True, null=True, help_text=help_text)
     help_text = "Something like - e.g. - 'Home'"
     home_menu_title = models.CharField(max_length=40, help_text=help_text)
-    help_text = "HTML color code, e.g. '#003300"
+    help_text = "HTML color code, e.g. '#999999"
     home_menu_color = models.CharField(max_length=7, help_text=help_text)
-    help_text = "HTML color code, e.g. '#006600"
+    help_text = "HTML color code, e.g. '#000000"
     home_menu_active_color = models.CharField(max_length=7, help_text=help_text)
     help_text = "Number of websites for home category"
     home_num_websites = models.IntegerField(help_text=help_text)
@@ -80,7 +80,7 @@ class EditionCategory(models.Model):
     category = models.ForeignKey(Category)
     help_text = "Edition specific category name"
     name = models.CharField(max_length=40, help_text=help_text)
-    help_text = "Every url-conform string except 'contact'"
+    help_text = "Every url-conform string except 'contact' (e.g. 'my-category-1')"
     url_name = models.SlugField(max_length=40, help_text=help_text)
     help_text = "Numeric value for category order. Tip: Use 100-200-300-... steps for easy reordering."
     order = models.IntegerField(help_text=help_text)

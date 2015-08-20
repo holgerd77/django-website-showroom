@@ -66,10 +66,8 @@ Now run the Django server command::
 
 You should be able to enter the Django admin with your user credentials at http://127.0.0.1:8000/admin/.
 
-Site Configuration
-==================
+Example Project
+===============
+There is an example project where you can see a showroom in action! Go to the ``example_project`` folder of the showroom
+lib installation and run a Django server with ``python manage runserver``. Admin credentials are "admin/admin".
 
-
-
-- Customize your site's title, subtitle,... via settings.py (see opendata-showroom-org GitHub project as example)
-- Create desired categories, websites via admin interface
