@@ -4,10 +4,10 @@ import os
 
 setup(
     name='django-website-showroom',
-    version='0.1',
+    version='0.2',
     description='General purpose showroom for presenting a collection of categorized websites',
     author='Holger Drewes',
-    author_email='Holger.Drewes@googlemail.com',
+    author_email='Holger.Drewes@gmail.com',
     url='https://github.com/holgerd77/django-website-showroom/',
     long_description=open(os.path.join(os.path.dirname(__file__), 'README.rst')).read(),
     packages=find_packages(),
@@ -20,7 +20,7 @@ setup(
         #'django-celery',
     #],
     classifiers=[
-        'Development Status :: 2 - Pre-Alpha',
+        'Development Status :: 3 - Alpha',
         'Environment :: Web Environment',
         'Framework :: Django',
         'Intended Audience :: Developers',
