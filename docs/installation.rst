@@ -10,6 +10,12 @@ Requirements
 - `Whoosh 2.5 <https://pypi.python.org/pypi/Whoosh/>`_ (Full-text search enginge used for django-haystack)
 - `Pillow <https://pypi.python.org/pypi/Pillow/2.9.0>`_
 
+Installation with pip
+=====================
+Create a ``virtualenv`` environment, activate it and install the package with all the dependencies via::
+
+    pip install django-website-showroom
+
 Manual Installation
 ===================
 - Clone source repository from `GitHub <https://github.com/holgerd77/django-website-showroom>`_

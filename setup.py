@@ -12,6 +12,8 @@ setup(
     long_description=open(os.path.join(os.path.dirname(__file__), 'README.rst')).read(),
     packages=find_packages(),
     include_package_data=True,
+    license='BSD License',
+    platforms=['OS Independent'],
     install_requires=[
         'Django>=1.8,<1.9',
         'django-haystack==2.4',

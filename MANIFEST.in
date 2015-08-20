@@ -1,3 +1,9 @@
+include LICENSE
+include MANIFEST.in
 include README.rst
+include requirements.txt
+recursive-include docs *
+recursive-include example_project *
 recursive-include website_showroom/static *
 recursive-include website_showroom/templates *
+exclude *.pyc
