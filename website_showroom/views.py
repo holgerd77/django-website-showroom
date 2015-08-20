@@ -24,9 +24,13 @@ def get_act_edition(request, ed_country = None):
             ed = Edition.objects.get(country=ed_country)
             return ed
         else:
-            if 'edition' in request.COOKIES:
-                ed = Edition.objects.get(country=request.COOKIES['edition'])
-                return ed
+            if 'edition' in request.COOKIES and request.COOKIES['edition']:
+                try:
+                    ed = Edition.objects.get(country=request.COOKIES['edition'])
+                    return ed
+                except ObjectDoesNotExist:
+                    pass
+                return eds[0]
             else:
                 if 'HTTP_ACCEPT_LANGUAGE' in request.META:
                     print request.META['HTTP_ACCEPT_LANGUAGE'][0:2]
