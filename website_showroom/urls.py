@@ -1,4 +1,4 @@
-from django.conf.urls.defaults import patterns, include, url
+from django.conf.urls import patterns, include, url
 from website_showroom.feeds import RssFeed
 
 from django.contrib import admin
