@@ -7,10 +7,12 @@
 
     <!--<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="{{ act_edition.country }}/rss/" />-->
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
-    <link rel="stylesheet" href="/static/content.css" type="text/css">
-    <link rel="stylesheet" href="/static/lib/font-awesome.css" type="text/css">
+    <link rel="stylesheet" href="/static/content-1.0.0.css" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
 </head>
 
@@ -26,21 +28,21 @@
         {% if act_edition.facebook_url %}
         <div class="header_icons_div">
           <a href="{{ act_edition.facebook_url }}" target="_blank" title="Facebook">
-            <i class="icon-facebook-sign bootstrap_icon_style"></i>
+            <i class="fa fa-facebook-square bootstrap_icon_style"></i>
           </a>
         </div>
         {% endif %}
         {% if act_edition.twitter_url %}
         <div class="header_icons_div">
           <a href="{{ act_edition.twitter_url }}" target="_blank" title="Twitter">
-            <i class="icon-twitter-sign bootstrap_icon_style"></i>
+            <i class="fa fa-twitter-square bootstrap_icon_style"></i>
           </a>
         </div>
         {% endif %}
         {% if act_edition.google_plus_url %}
         <div class="header_icons_div">
           <a href="{{ act_edition.google_plus_url }}" target="_blank" title="Google+">
-            <i class="icon-google-plus-sign bootstrap_icon_style"></i>
+            <i class="fa fa-google-plus-square bootstrap_icon_style"></i>
           </a>
         </div>
         {% endif %}
@@ -115,8 +117,15 @@
 <div id="footer">
     <div style="float:left;">{% autoescape off %}{{ act_edition.footer_left }}{% endautoescape %}</div>
     <div style="float:right;margin-right:25px;">{% autoescape off %}{{ act_edition.footer_right }}{% endautoescape %}
-    | <a href="https://github.com/holgerd77/django-website-showroom" target="_blank">Source Code (GitHub)</a>
-     | <a href="/{{ act_edition.country }}/contact/">{{ act_edition.contact_title }}</a></div>
+    &nbsp;&nbsp; 
+    <a href="https://github.com/holgerd77/django-website-showroom" target="_blank">
+      <i class="fa fa-github"></i> Source Code
+    </a>
+     &nbsp;&nbsp; 
+    <a href="/{{ act_edition.country }}/contact/">
+        <i class="fa fa-pencil"></i> {{ act_edition.contact_title }}
+    </a>
+    </div>
     <div style="clear:both;"></div>
 </div>
 
