@@ -1,8 +1,7 @@
 /* Layout */
-body { margin: 0;padding: 0; }
 h1, h2 { margin: 0; padding: 0; }
 
-#page  { width: 975px;margin: 25px auto; }
+#page  { margin-top: 25px; }
 #topbar { width: 100%; }
 #header { width: 100%; padding-top: 6px; }
 
@@ -26,7 +25,7 @@ h1, h2 { margin: 0; padding: 0; }
 }
 #menu { margin-top: 30px;width: 100%; }
 .menu_elem, h3 {
-	margin-top:0; margin-left: 0; margin-bottom: 0;
+	margin-top:0; margin-left: 0; margin-bottom: 2px;
 	font-size: 1em;
 	font-weight: normal;
 	float: left;
@@ -53,9 +52,23 @@ h3 a:active, h3 a:hover {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 1em;
 	float: left;
-	width: 300px;
-	height: 379px;
 	margin-right: 25px;
+}
+@media(max-width:767px){
+	.project { width: 300px;height: 382px; }
+	.project .description { height: 72px; }
+}
+@media(min-width:768px){
+	.project { width: 300px;height: 382px; }
+	.project .description { height: 72px; }
+}
+@media(min-width:992px){
+	.project { width: 288px;height: 372px; }
+	.project .description { height: 72px; }
+}
+@media(min-width:1200px){
+	.project { width: 260px;height: 352px; }
+	.project .description { height: 72px; }
 }
 .project img { border: 1px solid #ccc;margin-bottom: 14px; }
 .project a { }
@@ -65,7 +78,7 @@ h3 a:active, h3 a:hover {
 	margin-bottom: 12px;
 }
 .project .flag { float: right; margin-left: 10px; }
-.project .description { font-size: 0.9em; height: 65px; margin-bottom: 10px; }
+.project .description { font-size: 0.9em; margin-bottom: 10px; }
 .project .url { font-size: 0.9em; }
 #footer {
 	font-family: Arial, Helvetica, sans-serif;

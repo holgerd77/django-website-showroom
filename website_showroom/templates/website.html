@@ -1,7 +1,7 @@
 {% load staticfiles %}
      <div class="project">
         <a href="{{ ed_website.website.url }}" target="_blank">
-        <img src="{{ ed_website.website.screenshot.url }}" width="300" height="200"></a>
+        <img src="{{ ed_website.website.screenshot.url }}" class="img-responsive"></a>
         <div class="title" style="color:{{ ed_website.website.category.active_color }}">{{ ed_website.get_title }}</div>
         {% if ed_website.website.country %}
         <div class="flag">

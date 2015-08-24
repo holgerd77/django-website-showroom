@@ -10,6 +10,7 @@
 .settings
 *.swp
 *.egg-info
+example_project/search_index
 dist
 build
 docs/_build
