@@ -17,6 +17,7 @@ h1, h2 { margin: 0; padding: 0; }
 	display:inline-block;
 	vertical-align: middle;
 	margin-left: 2px;
+	margin-bottom: 4px;
 }
 .bootstrap_icon_style {
 	font-size:18px !important;

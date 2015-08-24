@@ -1,9 +1,14 @@
+{% load staticfiles %}
      <div class="project">
         <a href="{{ ed_website.website.url }}" target="_blank">
         <img src="{{ ed_website.website.screenshot.url }}" width="300" height="200"></a>
         <div class="title" style="color:{{ ed_website.website.category.active_color }}">{{ ed_website.get_title }}</div>
         {% if ed_website.website.country %}
-        <div class="flag"><img src="{{ STATIC_URL }}world/{{ ed_website.website.country }}.png" width="25" height="15"></div>
+        <div class="flag">
+            {% with 'world/'|add:ed_website.website.country|add:'.png' as website_ed_img_static %}
+            <img src="{% static "website_ed_img_static" %}" width="25" height="15">
+            {% endwith %}
+        </div>
         {% endif %}
         <div style="clear:both;"></div>
         <div class="description">{{ ed_website.desc }}</div>
