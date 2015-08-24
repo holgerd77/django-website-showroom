@@ -48,7 +48,7 @@
         {% endif %}
       
         <form method="get" action="/search/" style="display: inline-block;">
-            <input type="search" maxlength="50" size="30" placeholder="Search" name="q" value="{{ query }}" id="search_text" onKeyPress="if(event && event.keyCode==13) { if(document.getElementById('search_text').value != '') document.forms[0].submit();else return false;}" autocomplete="off"/>
+            <input type="search" class="form-control" maxlength="50" size="30" placeholder="Search" name="q" value="{{ query }}" id="search_text" onKeyPress="if(event && event.keyCode==13) { if(document.getElementById('search_text').value != '') document.forms[0].submit();else return false;}" autocomplete="off"/>
         </form>
         
         {% for edition in edition_list %}

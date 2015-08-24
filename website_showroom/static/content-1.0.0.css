@@ -4,7 +4,7 @@ h1, h2 { margin: 0; padding: 0; }
 
 #page  { width: 975px;margin: 25px auto; }
 #topbar { width: 100%; }
-#header { width: 100%; padding-top: 20px; }
+#header { width: 100%; padding-top: 6px; }
 
 #page_header {
    color: #222;
@@ -23,7 +23,7 @@ h1, h2 { margin: 0; padding: 0; }
 	color:#222 !important;
 	text-decoration: none !important;
 }
-#menu { margin-top: 40px;width: 100%; }
+#menu { margin-top: 30px;width: 100%; }
 .menu_elem, h3 {
 	margin-top:0; margin-left: 0; margin-bottom: 0;
 	font-size: 1em;
@@ -34,20 +34,23 @@ h1, h2 { margin: 0; padding: 0; }
 }
 .menu_elem a, h3 a {
 	font-family: Arial, Helvetica, sans-serif;
-	font-size: 0.9em;
+	font-size: 1em;
 	color: #fdfdfd;
 	text-decoration: none;
 }
+h3 a:active, h3 a:hover {
+	color: #fdfdfd;
+}
 #content {
 	font-family: Arial, Helvetica, sans-serif;
-	font-size: 0.9em;
+	font-size: 1em;
 	min-height: 400px;
 	margin-top: 50px;
 	width: 100%;
 }
 .project {
 	font-family: Arial, Helvetica, sans-serif;
-	font-size: 0.9em;
+	font-size: 1em;
 	float: left;
 	width: 300px;
 	height: 379px;
@@ -61,14 +64,14 @@ h1, h2 { margin: 0; padding: 0; }
 	margin-bottom: 12px;
 }
 .project .flag { float: right; margin-left: 10px; }
-.project .description { height: 65px; margin-bottom: 10px; }
-.project .url { }
+.project .description { font-size: 0.9em; height: 65px; margin-bottom: 10px; }
+.project .url { font-size: 0.9em; }
 #footer {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 0.8em;
 	color: #222;
 	width: 100%;
-	margin-top: 30px;
+	margin-top: 20px;
 	margin-bottom: 40px;
 }
 #footer a {

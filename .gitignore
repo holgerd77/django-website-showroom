@@ -1,6 +1,6 @@
 *.py[co]
 .DS_Store
-*.sql
+*.sqlite3
 *.gz
 *.zip
 *.tar
