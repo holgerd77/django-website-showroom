@@ -12,6 +12,7 @@ Features
 - Edition-dependent custom static page texts (like title, subtitle, footer,...)
 - Edition-dependent category and website selection
 - No language dependent static code
+- Responsive, mobile-friendly design
 
 
 For notes on installation and usage see the `documentation <http://django-website-showroom.readthedocs.org>`_.

@@ -79,6 +79,7 @@ There is an example project where you can see a showroom in action!
 * Go to the ``example_project`` folder of the showroom lib installation
 * Create the DB with ``python manage.py migrate`` and load the initial example data with
   ``python manage.py loaddata example_project.json``
+* Rebuild the search index with ``python manage.py rebuild_index``
 * Run a Django server with ``python manage runserver``
 * Admin credentials are "admin/admin"
 

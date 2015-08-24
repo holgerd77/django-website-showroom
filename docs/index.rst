@@ -17,6 +17,7 @@ Features
 - Edition-dependent custom static page texts (like title, subtitle, footer,...)
 - Edition-dependent category and website selection
 - No language dependent static code
+- Responsive, mobile-friendly design
 
 Contents
 --------
