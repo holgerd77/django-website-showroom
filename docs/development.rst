@@ -4,6 +4,10 @@ Development
 
 Release Notes
 =============
+**Changes in version 0.3** (2015-08-24)
+
+* TODO
+
 **Changes in version 0.2** (2015-08-20)
 
 * New organized development structure with new separate docs (this one), branch-based development

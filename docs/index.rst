@@ -11,9 +11,11 @@ Python/Django project to easily create showroom websites presenting different we
 Features
 --------
 - Administrable via Django admin (Categories, Websites)
-- Automatic screenshot resize
+- Screenshots with automatic resize functionality
 - Customizable category colors
-- Things like title, subtitle, footer configurable via settings.py
+- Creation of different language editions
+- Edition-dependent custom static page texts (like title, subtitle, footer,...)
+- Edition-dependent category and website selection
 - No language dependent static code
 
 Contents
