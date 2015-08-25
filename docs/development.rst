@@ -10,6 +10,7 @@ Release Notes
 * Switched back to 3-column layout for large screens
 * Layout improvements
 * Removed not-used library files
+* Fixed bug when using same category URL name for different editions
 
 **Changes in version 0.3** (2015-08-24)
 
