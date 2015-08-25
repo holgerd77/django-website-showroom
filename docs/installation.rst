@@ -72,6 +72,8 @@ Now run the Django server command::
 
 You should be able to enter the Django admin with your user credentials at http://127.0.0.1:8000/admin/.
 
+.. _example_project:
+
 Example Project
 ===============
 There is an example project where you can see a showroom in action!

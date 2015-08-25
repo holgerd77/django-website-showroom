@@ -18,6 +18,9 @@ h1, h2 { margin: 0; padding: 0; }
 	margin-left: 2px;
 	margin-bottom: 4px;
 }
+.header_icons_div i {
+	margin-top: 3px;
+}
 .bootstrap_icon_style {
 	font-size:18px !important;
 	color:#222 !important;
@@ -54,22 +57,27 @@ h3 a:active, h3 a:hover {
 	float: left;
 	margin-right: 25px;
 }
+
 @media(max-width:767px){
-	.project { width: 300px;height: 382px; }
+	.project { width: 288px;height: 382px; }
 	.project .description { height: 72px; }
 }
 @media(min-width:768px){
-	.project { width: 300px;height: 382px; }
+	.project { width: 288px;height: 382px; }
 	.project .description { height: 72px; }
 }
 @media(min-width:992px){
-	.project { width: 288px;height: 372px; }
+	.project { width: 288px;height: 382px; }
 	.project .description { height: 72px; }
 }
 @media(min-width:1200px){
-	.project { width: 260px;height: 352px; }
+	.container {
+      width: 970px !important;
+    }
+	.project { width: 288px;height: 382px; }
 	.project .description { height: 72px; }
 }
+
 .project img { border: 1px solid #ccc;margin-bottom: 14px; }
 .project a { }
 .project .title {
@@ -93,3 +101,5 @@ h3 a:active, h3 a:hover {
 	font-size: inherit;
 	color: inherit;
 }
+
+

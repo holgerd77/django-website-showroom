@@ -8,7 +8,9 @@
         <div class="project">
         <a href="{{ ed_website.website.url }}" target="_blank">
         <img src="{{ ed_website.website.screenshot.url }}" class="img-responsive"></a>
-        <div class="title" style="color:{{ ed_website.website.category.active_color }}">{{ ed_website.get_title }}</div>
+        <div class="title" style="color:{{ ed_website.website.category.active_color }}">
+            <span title="{{ ed_website.get_title }}">{{ ed_website.get_title|truncatechars:35 }}</span>
+        </div>
         {% if ed_website.website.country %}
         <div class="flag">
             {% with 'world/'|add:ed_website.website.country|add:'.png' as website_ed_img_static %}
@@ -17,9 +19,13 @@
         </div>
         {% endif %}
         <div style="clear:both;"></div>
-        <div class="description">{{ ed_website.desc }}</div>
+        <div class="description">
+            <span title="{{ ed_website.desc }}">
+                {{ ed_website.desc|truncatechars:180 }}
+            </span>
+        </div>
         <div class="url">
-            <a href="{{ ed_website.website.url }}" target="_blank" style="color:{{ ed_website.website.category.active_color }};">{{ ed_website.website.url }}</a>
+            <a href="{{ ed_website.website.url }}" target="_blank" style="color:{{ ed_website.website.category.active_color }};">{{ ed_website.website.url|truncatechars:44 }}</a>
         </div>
         </div>
     {% endfor %}

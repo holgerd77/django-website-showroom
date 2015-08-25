@@ -12,7 +12,7 @@
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
-    <link rel="stylesheet" href="/static/content-1.0.0.css" type="text/css">
+    <link rel="stylesheet" href="/static/content-1.0.1.css" type="text/css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
@@ -49,20 +49,22 @@
         </div>
         {% endif %}
       
-        <form method="get" action="/search/" style="display: inline-block;margin-right:10px;">
+        <form method="get" action="/search/" style="display: inline-block;margin-left:10px;">
             <input type="search" class="form-control" maxlength="50" size="30" placeholder="Search" name="q" value="{{ query }}" id="search_text" onKeyPress="if(event && event.keyCode==13) { if(document.getElementById('search_text').value != '') document.forms[0].submit();else return false;}" autocomplete="off"/>
         </form>
         
-        {% for edition in edition_list %}
-        <div class="header_icons_div">
-            {% with 'world/'|add:edition.country|add:'.png' as edition_img_static %}
-            <a href="/{{ edition.country }}/">
-                <img src="{% static edition_img_static %}" width="25" height="15">
-            </a>
-            {% endwith %}
-          
+        <div style="display:inline-block;margin-left:10px;">
+            {% for edition in edition_list %}
+            <div class="header_icons_div">
+                {% with 'world/'|add:edition.country|add:'.png' as edition_img_static %}
+                <a href="/{{ edition.country }}/">
+                    <img src="{% static edition_img_static %}" width="25" height="15">
+                </a>
+                {% endwith %}
+              
+            </div>
+            {% endfor %}
         </div>
-        {% endfor %}
     </div>
 </div>
 
@@ -73,7 +75,7 @@
     <div style="float:left;">
         <a href="/{{ act_edition.country }}/" style="text-decoration:none"><h1 id="page_header">{{ act_edition.site_title }}</h1></a>
     </div>
-    <div style="float:right;text-align:right;margin-right:25px;">
+    <div style="float:right;text-align:right;margin-top:2px;margin-right:25px;">
         <h2 id="sub_header">{% autoescape off %}{{ act_edition.site_subtitle }}{% endautoescape %}</h2>
     </div>
 
