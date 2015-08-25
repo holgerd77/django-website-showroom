@@ -4,7 +4,7 @@ import os
 
 setup(
     name='django-website-showroom',
-    version='0.3',
+    version='0.3.1',
     description='General purpose showroom for presenting a collection of categorized websites',
     author='Holger Drewes',
     author_email='Holger.Drewes@gmail.com',

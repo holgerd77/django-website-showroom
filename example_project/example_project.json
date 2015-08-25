@@ -304,7 +304,7 @@
         "is_active": true,
         "is_superuser": true,
         "is_staff": true,
-        "last_login": "2015-08-20T14:30:41.325Z",
+        "last_login": "2015-08-25T08:46:44.508Z",
         "groups": [],
         "user_permissions": [],
         "password": "pbkdf2_sha256$20000$vHkqYWQ6JZQF$1EGSCnf/mMJPoUnAKCW4oBYUSR9dhU3wGTyr2uly3Xg=",
@@ -323,11 +323,11 @@
         "rss_title": "Latest Color Websites",
         "rss_description": "Websites about colors",
         "country": "en",
-        "facebook_url": "",
+        "facebook_url": "http://a-fictive-facebook-url.mysocialnetwork",
         "home_menu_title": "Home",
         "footer_left": "This is the left footer",
-        "google_plus_url": "",
-        "twitter_url": "",
+        "google_plus_url": "http://a-fictive-google-plus-url.mysocialnetwork",
+        "twitter_url": "http://a-fictive-twitter-url.mysocialnetwork",
         "site_title": "Color Websites",
         "comments": "",
         "contact_html": "You can always contact me and talk to me about colors!\r\n\r\n",
@@ -339,6 +339,32 @@
     },
     "model": "website_showroom.edition",
     "pk": 1
+},
+{
+    "fields": {
+        "home_menu_color": "#999999",
+        "html_title": "Showroom f\u00fcr Farb-Webseiten",
+        "contact_title": "Kontakt",
+        "site_subtitle": "Showroom f\u00fcr Farb-Webseiten",
+        "rss_title": "Die neuesten Farb-Webseiten",
+        "rss_description": "Showroom f\u00fcr Farb-Webseiten",
+        "country": "de",
+        "facebook_url": "",
+        "home_menu_title": "Home",
+        "footer_left": "Dies ist der linke Footer-Text",
+        "google_plus_url": "",
+        "twitter_url": "",
+        "site_title": "Farb-Webseiten",
+        "comments": "",
+        "contact_html": "Du kannst jederzeit mit mir \u00fcber Farben sprechen!",
+        "short_description": "Showroom f\u00fcr Farb-Webseiten",
+        "footer_right": "Dies ist der rechte Footer-Text",
+        "home_menu_active_color": "#000000",
+        "order": 150,
+        "home_num_websites": 10
+    },
+    "model": "website_showroom.edition",
+    "pk": 2
 },
 {
     "fields": {
@@ -422,6 +448,50 @@
 },
 {
     "fields": {
+        "category": 4,
+        "edition": 2,
+        "url_name": "blau",
+        "name": "Blau",
+        "order": 400
+    },
+    "model": "website_showroom.editioncategory",
+    "pk": 5
+},
+{
+    "fields": {
+        "category": 3,
+        "edition": 2,
+        "url_name": "gruen",
+        "name": "Gr\u00fcn",
+        "order": 300
+    },
+    "model": "website_showroom.editioncategory",
+    "pk": 6
+},
+{
+    "fields": {
+        "category": 2,
+        "edition": 2,
+        "url_name": "orange",
+        "name": "Orange",
+        "order": 200
+    },
+    "model": "website_showroom.editioncategory",
+    "pk": 7
+},
+{
+    "fields": {
+        "category": 1,
+        "edition": 2,
+        "url_name": "rot",
+        "name": "Rot",
+        "order": 100
+    },
+    "model": "website_showroom.editioncategory",
+    "pk": 8
+},
+{
+    "fields": {
         "category": 1,
         "screenshot": "screenshots/s_445d5e68-474e-11e5-9f94-8438356148b4.png",
         "title": "A red website",
@@ -446,6 +516,42 @@
 },
 {
     "fields": {
+        "category": 3,
+        "screenshot": "screenshots/s_94735f6e-4b07-11e5-bb47-8438356148b4.png",
+        "title": "A green website",
+        "url": "http://oh-my-this-is-a-long-url-for-such-a-sleek-site.it",
+        "country": "it",
+        "pub_date": "2015-08-25T08:59:23.226Z"
+    },
+    "model": "website_showroom.website",
+    "pk": 3
+},
+{
+    "fields": {
+        "category": 4,
+        "screenshot": "screenshots/s_c9ec6bae-4b07-11e5-becb-8438356148b4.png",
+        "title": "A blue website",
+        "url": "http://blue.colorwebsite",
+        "country": "",
+        "pub_date": "2015-08-25T09:00:52.924Z"
+    },
+    "model": "website_showroom.website",
+    "pk": 4
+},
+{
+    "fields": {
+        "category": 1,
+        "screenshot": "screenshots/s_042a197d-4b08-11e5-a200-8438356148b4.png",
+        "title": "Another red website",
+        "url": "http://red.anothercolorwebsite",
+        "country": "",
+        "pub_date": "2015-08-25T09:02:30.636Z"
+    },
+    "model": "website_showroom.website",
+    "pk": 5
+},
+{
+    "fields": {
         "website": 1,
         "title": "",
         "edition": 1,
@@ -467,5 +573,77 @@
     },
     "model": "website_showroom.editionwebsite",
     "pk": 2
+},
+{
+    "fields": {
+        "website": 1,
+        "title": "Eine rote Webseite",
+        "edition": 2,
+        "pub_date": "2015-08-25T08:52:27.052Z",
+        "order": 100,
+        "desc": "Dies ist ein l\u00e4ngerer Beschreibungstext f\u00fcr die Webseite zur Farbe \"rot\". Die Seite ist sehr h\u00fcbsch und ein Besuch ist wirklich zu empfehlen!"
+    },
+    "model": "website_showroom.editionwebsite",
+    "pk": 3
+},
+{
+    "fields": {
+        "website": 2,
+        "title": "Ein l\u00e4ngerer Titel f\u00fcr die orangene Webseite",
+        "edition": 2,
+        "pub_date": "2015-08-25T08:53:04.311Z",
+        "order": 200,
+        "desc": "Diese orangene Webseite ist wirklich toll!"
+    },
+    "model": "website_showroom.editionwebsite",
+    "pk": 4
+},
+{
+    "fields": {
+        "website": 3,
+        "title": "",
+        "edition": 1,
+        "pub_date": "2015-08-25T08:59:23.255Z",
+        "order": 200,
+        "desc": "An italian green website."
+    },
+    "model": "website_showroom.editionwebsite",
+    "pk": 5
+},
+{
+    "fields": {
+        "website": 3,
+        "title": "Eine gr\u00fcne Webseite",
+        "edition": 2,
+        "pub_date": "2015-08-25T08:59:23.304Z",
+        "order": 200,
+        "desc": "Eine italienische gr\u00fcne Webseite."
+    },
+    "model": "website_showroom.editionwebsite",
+    "pk": 6
+},
+{
+    "fields": {
+        "website": 4,
+        "title": "",
+        "edition": 1,
+        "pub_date": "2015-08-25T09:00:52.955Z",
+        "order": 300,
+        "desc": "This blue website is shown only in the english edition."
+    },
+    "model": "website_showroom.editionwebsite",
+    "pk": 7
+},
+{
+    "fields": {
+        "website": 5,
+        "title": "",
+        "edition": 1,
+        "pub_date": "2015-08-25T09:02:30.652Z",
+        "order": 350,
+        "desc": "This is another red website, also beautiful. Have a look!"
+    },
+    "model": "website_showroom.editionwebsite",
+    "pk": 8
 }
 ]

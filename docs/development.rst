@@ -4,6 +4,10 @@ Development
 
 Release Notes
 =============
+**Changes in version 0.3.1** (2015-08-25)
+
+* TODO
+
 **Changes in version 0.3** (2015-08-24)
 
 * Responsive design
