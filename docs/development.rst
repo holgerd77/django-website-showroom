@@ -8,6 +8,8 @@ Release Notes
 
 * Added more entries to the example project (see: :ref:`example_project`)
 * Switched back to 3-column layout for large screens
+* Layout improvements
+* Removed not-used library files
 
 **Changes in version 0.3** (2015-08-24)
 
