@@ -4,6 +4,11 @@ Development
 
 Release Notes
 =============
+**Changes in version 0.4.0** NOT RELEASED YET!
+
+* Updated ``Django`` requirement version from 1.8 to 1.11
+* Updated ``Haystack`` dependency to 2.6, ``Whoosh`` dependency to 2.7
+
 **Changes in version 0.3.1** (2015-08-25)
 
 * Added more entries to the example project (see: :ref:`example_project`)

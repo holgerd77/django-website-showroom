@@ -4,7 +4,7 @@ import os
 
 setup(
     name='django-website-showroom',
-    version='0.3.1',
+    version='0.4.0',
     description='General purpose showroom for presenting a collection of categorized websites',
     author='Holger Drewes',
     author_email='Holger.Drewes@gmail.com',
@@ -15,9 +15,9 @@ setup(
     license='BSD License',
     platforms=['OS Independent'],
     install_requires=[
-        'Django>=1.8,<1.9',
-        'django-haystack==2.4',
-        'Whoosh==2.5',
+        'Django>=1.11,<2.0',
+        'django-haystack>=2.6,<2.7',
+        'Whoosh>=2.7,<2.8',
         'Pillow',
     ],
     classifiers=[
