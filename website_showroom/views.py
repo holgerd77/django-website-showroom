@@ -69,13 +69,13 @@ def index(request, ed_country):
     home_dummy_ed_cat = get_home_dummy_ed_cat(act_edition)
     ed_category_list.insert(0, home_dummy_ed_cat)
     ed_website_list = EditionWebsite.objects.filter(edition=act_edition).order_by('-pub_date')[:act_edition.home_num_websites]
-    c = RequestContext(request, {
+    c = {
         'edition_list': get_edition_list(),
         'act_edition': act_edition, 
         'ed_category_list': ed_category_list, 
         'act_ed_cat': home_dummy_ed_cat, 
         'ed_website_list': ed_website_list
-    })
+    }
     response = render_to_response('website_list.html', c)
     max_age = 250 * 24 * 60 * 60 
     expires = datetime.datetime.strftime(datetime.datetime.utcnow() + datetime.timedelta(seconds=max_age), "%a, %d-%b-%Y %H:%M:%S GMT")
@@ -90,13 +90,13 @@ def category(request, ed_country, url_name):
     ed_category_list.insert(0, home_dummy_ed_cat)
     act_ed_cat = get_object_or_404(EditionCategory, edition=act_edition, url_name=url_name)
     ed_website_list = EditionWebsite.objects.filter(edition=act_edition, website__category=act_ed_cat.category).order_by('order')
-    c = RequestContext(request, {
+    c = {
         'edition_list': get_edition_list(),
         'act_edition': act_edition, 
         'ed_category_list': ed_category_list, 
         'act_ed_cat': act_ed_cat, 
         'ed_website_list': ed_website_list
-    })
+    }
     return render_to_response('website_list.html', c)
 
 def contact(request, ed_country):
@@ -104,9 +104,9 @@ def contact(request, ed_country):
     ed_category_list = get_ed_category_list(act_edition)
     home_dummy_ed_cat = get_home_dummy_ed_cat(act_edition)
     ed_category_list.insert(0, home_dummy_ed_cat)
-    c = RequestContext(request, {
+    c = {
         'edition_list': get_edition_list(),
         'act_edition': act_edition, 
         'ed_category_list': ed_category_list
-    })
+    }
     return render_to_response('contact.html', c)
