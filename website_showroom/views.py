@@ -33,7 +33,7 @@ def get_act_edition(request, ed_country = None):
                 return eds[0]
             else:
                 if 'HTTP_ACCEPT_LANGUAGE' in request.META:
-                    print request.META['HTTP_ACCEPT_LANGUAGE'][0:2]
+                    print(request.META['HTTP_ACCEPT_LANGUAGE'][0:2])
                     try:
                         ed = Edition.objects.get(country=request.META['HTTP_ACCEPT_LANGUAGE'][0:2])
                         return ed

@@ -49,7 +49,7 @@ class Edition(models.Model):
     
     ordering = ['order']
     
-    def __unicode__(self):
+    def __str__(self):
         return self.site_title + " (" + self.country + ")"
 
 
@@ -59,7 +59,7 @@ class Category(models.Model):
     color = models.CharField(max_length=7, help_text="Format: #ffffff")
     active_color = models.CharField(max_length=7, help_text="Format: #ffffff")
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
     def get_ed_categories(self):
@@ -109,7 +109,7 @@ class Website(models.Model):
 
     ordering = ['category']
 
-    def __unicode__(self):
+    def __str__(self):
         return self.title
     
     def get_ed_websites(self):
@@ -131,7 +131,7 @@ def post_save_handler(sender, instance, using, **kwargs):
     image = Image.open(instance.screenshot)
     thumb_ratio = float(1.5)
     img_ratio = float(image.size[0]) / float(image.size[1])
-    print "Ratios: T " + str(thumb_ratio) + ", I " + str(img_ratio)
+    print("Ratios: T " + str(thumb_ratio) + ", I " + str(img_ratio))
     # img is relatively heigher than thumb
     if thumb_ratio > img_ratio:
         crop_width = image.size[0]

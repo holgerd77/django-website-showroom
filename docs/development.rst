@@ -4,8 +4,9 @@ Development
 
 Release Notes
 =============
-**Changes in version 0.4.0** NOT RELEASED YET!
+**Changes in version 0.4.0** (2017-04-27)
 
+* ``Python 3.4+`` support, ``Python 2.7`` support dropped
 * Updated ``Django`` requirement version from 1.8 to 1.11
 * Updated ``Haystack`` dependency to 2.6, ``Whoosh`` dependency to 2.7
 
