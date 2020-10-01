@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-import os
+import os #import the os module
 
 setup(
     name='django-website-showroom',
